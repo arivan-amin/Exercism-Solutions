@@ -2,6 +2,7 @@ docker/tempo/tempo-data/
 *.sh
 .exercism
 .gradle
+**/build
 
 target/
 !.mvn/wrapper/maven-wrapper.jar

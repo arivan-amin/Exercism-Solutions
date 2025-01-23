@@ -9,8 +9,7 @@ class Hamming {
         if (leftStrand.trim()
             .length() != rightStrand.trim()
             .length()) {
-            throw new IllegalArgumentException(
-                "leftStrand and rightStrand must be of equal length.");
+            throw new IllegalArgumentException("strands must be of equal length");
         }
         this.leftStrand = leftStrand;
         this.rightStrand = rightStrand;
