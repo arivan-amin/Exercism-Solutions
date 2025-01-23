@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -11,64 +10,54 @@ public class NaturalNumberTest {
         assertThat(new NaturalNumber(6).getClassification()).isEqualTo(Classification.PERFECT);
     }
     
-    @Disabled ("Remove to run test")
     @Test
     public void testMediumPerfectNumberIsClassifiedCorrectly () {
         assertThat(new NaturalNumber(28).getClassification()).isEqualTo(Classification.PERFECT);
     }
     
-    @Disabled ("Remove to run test")
     @Test
     public void testLargePerfectNumberIsClassifiedCorrectly () {
         assertThat(new NaturalNumber(33550336).getClassification()).isEqualTo(
             Classification.PERFECT);
     }
     
-    @Disabled ("Remove to run test")
     @Test
     public void testSmallAbundantNumberIsClassifiedCorrectly () {
         assertThat(new NaturalNumber(12).getClassification()).isEqualTo(Classification.ABUNDANT);
     }
     
-    @Disabled ("Remove to run test")
     @Test
     public void testMediumAbundantNumberIsClassifiedCorrectly () {
         assertThat(new NaturalNumber(30).getClassification()).isEqualTo(Classification.ABUNDANT);
     }
     
-    @Disabled ("Remove to run test")
     @Test
     public void testLargeAbundantNumberIsClassifiedCorrectly () {
         assertThat(new NaturalNumber(33550335).getClassification()).isEqualTo(
             Classification.ABUNDANT);
     }
     
-    @Disabled ("Remove to run test")
     @Test
     public void testSmallestPrimeDeficientNumberIsClassifiedCorrectly () {
         assertThat(new NaturalNumber(2).getClassification()).isEqualTo(Classification.DEFICIENT);
     }
     
-    @Disabled ("Remove to run test")
     @Test
     public void testSmallestNonPrimeDeficientNumberIsClassifiedCorrectly () {
         assertThat(new NaturalNumber(4).getClassification()).isEqualTo(Classification.DEFICIENT);
     }
     
-    @Disabled ("Remove to run test")
     @Test
     public void testMediumDeficientNumberIsClassifiedCorrectly () {
         assertThat(new NaturalNumber(32).getClassification()).isEqualTo(Classification.DEFICIENT);
     }
     
-    @Disabled ("Remove to run test")
     @Test
     public void testLargeDeficientNumberIsClassifiedCorrectly () {
         assertThat(new NaturalNumber(33550337).getClassification()).isEqualTo(
             Classification.DEFICIENT);
     }
     
-    @Disabled ("Remove to run test")
     @Test
     /*
      * The number 1 has no proper divisors (https://en.wikipedia
@@ -79,7 +68,6 @@ public class NaturalNumberTest {
         assertThat(new NaturalNumber(1).getClassification()).isEqualTo(Classification.DEFICIENT);
     }
     
-    @Disabled ("Remove to run test")
     @Test
     public void testThatNonNegativeIntegerIsRejected () {
         assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(
@@ -87,7 +75,6 @@ public class NaturalNumberTest {
             .withMessage("You must supply a natural number (positive integer)");
     }
     
-    @Disabled ("Remove to run test")
     @Test
     public void testThatNegativeIntegerIsRejected () {
         assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(

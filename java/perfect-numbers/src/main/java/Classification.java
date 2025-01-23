@@ -1,4 +1,4 @@
-enum Classification {
+public enum Classification {
     
     DEFICIENT, PERFECT, ABUNDANT
 }
