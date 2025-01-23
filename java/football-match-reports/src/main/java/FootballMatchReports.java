@@ -1,5 +1,5 @@
-public class FootballMatchReports {    
-
+public class FootballMatchReports {
+    
     public static String onField (int shirtNum) {
         return switch (shirtNum) {
             case 1 -> "goalie";

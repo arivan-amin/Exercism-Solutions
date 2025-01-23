@@ -5,7 +5,8 @@ public class LogLevels {
     }
     
     private static String getLogMessage (String logLine) {
-        return logLine.substring(logLine.indexOf(":") + 1).trim();
+        return logLine.substring(logLine.indexOf(":") + 1)
+            .trim();
     }
     
     public static String logLevel (String logLine) {
@@ -13,7 +14,8 @@ public class LogLevels {
     }
     
     private static String getLogLevel (String logLine) {
-        return logLine.substring(logLine.indexOf("[") + 1, logLine.indexOf("]")).toLowerCase();
+        return logLine.substring(logLine.indexOf("[") + 1, logLine.indexOf("]"))
+            .toLowerCase();
     }
     
     public static String reformat (String logLine) {

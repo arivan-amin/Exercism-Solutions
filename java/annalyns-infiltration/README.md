@@ -22,11 +22,11 @@ Java supports three boolean operators:
 
 ```java
 !true // => false
-!false // => true
-true && false // => false
-true && true // => true
-false || false // => false
-false || true // => true
+    !false // => true
+    true&&false // => false
+    true&&true // => true
+    false||false // => false
+    false||true // => true
 ```
 
 ## Instructions
@@ -73,7 +73,9 @@ Otherwise, it returns `false`:
 
 ```java
 boolean knightIsAwake = true;
-AnnalynsInfiltration.canFastAttack(knightIsAwake);
+AnnalynsInfiltration.
+
+canFastAttack (knightIsAwake);
 // => false
 ```
 
@@ -87,8 +89,10 @@ Otherwise, it returns `false`:
 ```java
 boolean knightIsAwake;
 boolean archerIsAwake = true;
-boolean prisonerIsAwake = false;
-AnnalynsInfiltration.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake);
+boolean prisonerIsAwake;
+AnnalynsInfiltration.
+
+canSpy (knightIsAwake, archerIsAwake, prisonerIsAwake);
 //
 ```
 
@@ -102,7 +106,9 @@ Otherwise, it returns `false`:
 ```java
 boolean archerIsAwake;
 boolean prisonerIsAwake = true;
-AnnalynsInfiltration.canSignalPrisoner(archerIsAwake, prisonerIsAwake);
+AnnalynsInfiltration.
+
+canSignalPrisoner (archerIsAwake, prisonerIsAwake);
 // => true
 ```
 
@@ -120,9 +126,11 @@ Otherwise, it returns `false`:
 ```java
 boolean knightIsAwake;
 boolean archerIsAwake = true;
-boolean prisonerIsAwake = false;
+boolean prisonerIsAwake;
 boolean petDogIsPresent = false;
-AnnalynsInfiltration.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPrese
+AnnalynsInfiltration.
+
+canFreePrisoner (knightIsAwake, archerIsAwake, prisonerIsAwake, petDo
 ```
 
 ## Source

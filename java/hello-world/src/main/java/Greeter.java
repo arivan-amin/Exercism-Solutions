@@ -1,7 +1,6 @@
-class Greeter
-{
-    String getGreeting ()
-    {
+class Greeter {
+    
+    String getGreeting () {
         return "Hello, World!";
     }
 }

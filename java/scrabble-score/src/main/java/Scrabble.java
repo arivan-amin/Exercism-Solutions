@@ -12,38 +12,6 @@ class Scrabble {
         initializeScoresMap();
     }
     
-    int getScore () {
-        convertTextToLowerCase();
-        return calculateEachCharacterAndReturnTotalScore();
-    }
-    
-    private int calculateEachCharacterAndReturnTotalScore () {
-        return word.chars().map(this::calculateScoreForLetter).sum();
-    }
-    
-    private int calculateScoreForLetter (int asciiCode) {
-        if (isAlphabetCharacter(asciiCode)) {
-            return getScoreForCharacter(asciiCode);
-        }
-        return 0;
-    }
-    
-    private Integer getScoreForCharacter (int asciiCode) {
-        return scoresMap.get(convertAsciCodeToCharacterString(asciiCode));
-    }
-    
-    private boolean isAlphabetCharacter (int asciiCode) {
-        return (asciiCode >= LOWERCASE_A_ASCII_CODE) && (asciiCode <= LOWERCASE_Z_ASCII_CODE);
-    }
-    
-    private String convertAsciCodeToCharacterString (int asciiCode) {
-        return String.valueOf((char) asciiCode);
-    }
-    
-    private void convertTextToLowerCase () {
-        word = word.toLowerCase(Locale.ROOT);
-    }
-    
     private void initializeScoresMap () {
         scoresMap = new HashMap<>();
         scoresMap.put("a", 1);
@@ -72,6 +40,40 @@ class Scrabble {
         scoresMap.put("x", 8);
         scoresMap.put("q", 10);
         scoresMap.put("z", 10);
+    }
+    
+    int getScore () {
+        convertTextToLowerCase();
+        return calculateEachCharacterAndReturnTotalScore();
+    }
+    
+    private void convertTextToLowerCase () {
+        word = word.toLowerCase(Locale.ROOT);
+    }
+    
+    private int calculateEachCharacterAndReturnTotalScore () {
+        return word.chars()
+            .map(this::calculateScoreForLetter)
+            .sum();
+    }
+    
+    private int calculateScoreForLetter (int asciiCode) {
+        if (isAlphabetCharacter(asciiCode)) {
+            return getScoreForCharacter(asciiCode);
+        }
+        return 0;
+    }
+    
+    private boolean isAlphabetCharacter (int asciiCode) {
+        return (asciiCode >= LOWERCASE_A_ASCII_CODE) && (asciiCode <= LOWERCASE_Z_ASCII_CODE);
+    }
+    
+    private Integer getScoreForCharacter (int asciiCode) {
+        return scoresMap.get(convertAsciCodeToCharacterString(asciiCode));
+    }
+    
+    private String convertAsciCodeToCharacterString (int asciiCode) {
+        return String.valueOf((char) asciiCode);
     }
     
     @Override

@@ -32,7 +32,7 @@ value of `22`.
 
 - The function should check [if][if-statement] `isBlackJack` is `true` and return "P" otherwise.
 - If `isBlackJack` is `true`, the dealerScore needs to be checked for being lower than
-  10. [If][if-statement] it is lower, return "W" otherwise "S".
+    10. [If][if-statement] it is lower, return "W" otherwise "S".
 
 ## 4. Implement the decision logic for hand scores with less than 21 points.
 

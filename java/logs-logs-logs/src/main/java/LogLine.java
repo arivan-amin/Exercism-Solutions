@@ -1,5 +1,5 @@
 public class LogLine {
-
+    
     private final String logLine;
     
     public LogLine (String logLine) {
@@ -17,7 +17,8 @@ public class LogLine {
             case ERROR -> "6";
             case FATAL -> "42";
         };
-        return "%s:%s".formatted(levelCode, logLine.substring(logLine.indexOf(":") + 1).trim());
+        return "%s:%s".formatted(levelCode, logLine.substring(logLine.indexOf(":") + 1)
+            .trim());
     }
     
     public LogLevel getLogLevel () {

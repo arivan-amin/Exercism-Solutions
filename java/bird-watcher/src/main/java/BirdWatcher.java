@@ -22,15 +22,21 @@ class BirdWatcher {
     }
     
     public boolean hasDayWithoutBirds () {
-        return Arrays.stream(birdsPerDay).filter(i -> i == 0).findAny().isPresent();
+        return Arrays.stream(birdsPerDay)
+            .filter(i -> i == 0)
+            .findAny()
+            .isPresent();
     }
     
     public int getCountForFirstDays (int numberOfDays) {
         int validDaysCount = Math.min(numberOfDays, birdsPerDay.length);
-        return Arrays.stream(birdsPerDay, 0, validDaysCount).sum();
+        return Arrays.stream(birdsPerDay, 0, validDaysCount)
+            .sum();
     }
     
     public int getBusyDays () {
-        return (int) Arrays.stream(birdsPerDay).filter(i -> i >= 5).count();
+        return (int) Arrays.stream(birdsPerDay)
+            .filter(i -> i >= 5)
+            .count();
     }
 }

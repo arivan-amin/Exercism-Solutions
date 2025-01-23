@@ -1,6 +1,10 @@
 public class CarsAssemble {
-
+    
     public static final int CARS_PRODUCED_PER_HOUR = 221;
+    
+    public int workingItemsPerMinute (int speed) {
+        return (int) (productionRatePerHour(speed) / 60);
+    }
     
     public double productionRatePerHour (int speed) {
         return speed * CARS_PRODUCED_PER_HOUR * calculateSuccessRate(speed);
@@ -14,9 +18,5 @@ public class CarsAssemble {
             case 10 -> .77;
             default -> 0;
         };
-    }
-    
-    public int workingItemsPerMinute (int speed) {
-        return (int) (productionRatePerHour(speed) / 60);
     }
 }

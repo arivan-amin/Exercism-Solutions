@@ -1,6 +1,6 @@
 public class SalaryCalculator {
-
-        public double finalSalary (int daysSkipped, int productsSold) {
+    
+    public double finalSalary (int daysSkipped, int productsSold) {
         double totalSalary = getBonusAmount(productsSold) + getSalaryAmount(daysSkipped);
         return totalSalary > 2000 ? 2000 : totalSalary;
     }

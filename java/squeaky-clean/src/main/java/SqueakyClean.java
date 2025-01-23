@@ -10,7 +10,8 @@ class SqueakyClean {
     }
     
     private static String removeWhitespaceFromText (String identifier) {
-        return identifier.replaceAll(" ", "_").trim();
+        return identifier.replaceAll(" ", "_")
+            .trim();
     }
     
     private static String replaceLeetSpeakCharacters (String result) {

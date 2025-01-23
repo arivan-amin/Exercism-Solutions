@@ -5,7 +5,7 @@ public class ExperimentalRemoteControlCar implements RemoteControlCar {
     private int distanceDriven;
     
     public void drive () {
-        distanceDriven += DISTANCE_DRIVEN_EACH_RUN;    
+        distanceDriven += DISTANCE_DRIVEN_EACH_RUN;
     }
     
     public int getDistanceTravelled () {

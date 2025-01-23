@@ -2,6 +2,10 @@ public class Blackjack {
     
     public static final int BLACKJACK_VALUE = 21;
     
+    private static boolean doesDealerHaveLessThan10 (int dealerScore) {
+        return dealerScore < 10;
+    }
+    
     public int parseCard (String card) {
         return switch (card) {
             case "two" -> 2;
@@ -18,21 +22,6 @@ public class Blackjack {
         };
     }
     
-    public boolean isBlackjack (String card1, String card2) {
-        int card1Value = parseCard(card1);
-        int card2Value = parseCard(card2);
-        return isHandBlackjack(card1Value, card2Value);
-    }
-    
-    private static boolean isHandBlackjack (int card1Value, int card2Value) {
-        return getSumOfBothCardsValues(card1Value, card2Value) ==
-            BLACKJACK_VALUE;
-    }
-    
-    private static int getSumOfBothCardsValues (int card1Value, int card2Value) {
-        return card1Value + card2Value;
-    }
-    
     public String largeHand (boolean isBlackjack, int dealerScore) {
         if (isBlackjack) {
             return doesDealerHaveLessThan10(dealerScore) ? getValueForAutomaticWin() :
@@ -41,8 +30,8 @@ public class Blackjack {
         return getValueForSplit();
     }
     
-    private static boolean doesDealerHaveLessThan10 (int dealerScore) {
-        return dealerScore < 10;
+    private static String getValueForSplit () {
+        return "P";
     }
     
     public String smallHand (int handScore, int dealerScore) {
@@ -55,32 +44,28 @@ public class Blackjack {
         }
     }
     
-    private static String decideWhenValueIfBetween12And16 (int dealerScore) {
-        return dealerScore <= 6 ? getValueForStand() : getValueForHit();
-    }
-    
-    private static boolean isHandScoreSmallerThan6 (int handScore) {
-        return handScore <= 11;
-    }
-    
     private static boolean isHandScoreLargerThan17 (int handScore) {
         return handScore >= 17;
-    }
-    
-    private static String getValueForSplit () {
-        return "P";
     }
     
     private static String getValueForAutomaticWin () {
         return "W";
     }
     
-    private static String getValueForHit () {
-        return "H";
-    }
-    
     private static String getValueForStand () {
         return "S";
+    }
+    
+    private static boolean isHandScoreSmallerThan6 (int handScore) {
+        return handScore <= 11;
+    }
+    
+    private static String decideWhenValueIfBetween12And16 (int dealerScore) {
+        return dealerScore <= 6 ? getValueForStand() : getValueForHit();
+    }
+    
+    private static String getValueForHit () {
+        return "H";
     }
     
     // FirstTurn returns the semi-optimal decision for the first turn, given 
@@ -92,8 +77,21 @@ public class Blackjack {
         int handScore = parseCard(card1) + parseCard(card2);
         int dealerScore = parseCard(dealerCard);
         
-        return handScore > 20 ?
-            largeHand(isBlackjack(card1, card2), dealerScore) :
+        return handScore > 20 ? largeHand(isBlackjack(card1, card2), dealerScore) :
             smallHand(handScore, dealerScore);
+    }
+    
+    public boolean isBlackjack (String card1, String card2) {
+        int card1Value = parseCard(card1);
+        int card2Value = parseCard(card2);
+        return isHandBlackjack(card1Value, card2Value);
+    }
+    
+    private static boolean isHandBlackjack (int card1Value, int card2Value) {
+        return getSumOfBothCardsValues(card1Value, card2Value) == BLACKJACK_VALUE;
+    }
+    
+    private static int getSumOfBothCardsValues (int card1Value, int card2Value) {
+        return card1Value + card2Value;
     }
 }

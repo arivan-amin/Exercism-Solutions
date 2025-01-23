@@ -1,4 +1,3 @@
 public enum TravelMethod {
-    WALKING,
-    HORSEBACK
+    WALKING, HORSEBACK
 }

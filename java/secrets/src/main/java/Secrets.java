@@ -1,5 +1,5 @@
 public class Secrets {
-
+    
     public static int shiftBack (int value, int amount) {
         return value >>> amount;
     }

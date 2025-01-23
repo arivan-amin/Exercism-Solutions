@@ -10,7 +10,8 @@ class AppointmentScheduler {
     }
     
     public boolean hasPassed (LocalDateTime appointmentDate) {
-        return LocalDateTime.now().isAfter(appointmentDate);
+        return LocalDateTime.now()
+            .isAfter(appointmentDate);
     }
     
     public boolean isAfternoonAppointment (LocalDateTime appointmentDate) {
@@ -33,7 +34,8 @@ class AppointmentScheduler {
     }
     
     public LocalDate getAnniversaryDate () {
-        int currentYear = LocalDate.now().getYear();
+        int currentYear = LocalDate.now()
+            .getYear();
         return LocalDate.of(currentYear, 9, 15);
     }
 }

@@ -6,8 +6,8 @@ class HandshakeCalculator {
     List<Signal> calculateHandshake (int number) {
         List<Signal> signals = new ArrayList<>();
         
-        String binaryString =
-            String.format("%5s", Integer.toBinaryString(number)).replaceAll(" ", "0");
+        String binaryString = String.format("%5s", Integer.toBinaryString(number))
+            .replaceAll(" ", "0");
         
         if (binaryString.charAt(binaryString.length() - 1) == '1') {
             signals.add(Signal.WINK);
